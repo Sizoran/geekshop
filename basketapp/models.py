@@ -30,5 +30,5 @@ class Basket(models.Model):
         return _totalcost
 
     @staticmethod
-        def get_items(user):
-            return Basket.objects.filter(user=user).order_by("product__category")
+    def get_items(user):
+        return Basket.objects.filter(user=user).order_by("product__category")
