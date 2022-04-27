@@ -62,6 +62,13 @@ MIDDLEWARE = [
     "social_django.middleware.SocialAuthExceptionMiddleware",
 ]
 
+if DEBUG:
+    MIDDLEWARE.extend(
+        [
+            "debug_toolbar.middleware.DebugToolbarMiddleware",
+        ]
+    )
+
 ROOT_URLCONF = "geekshop.urls"
 
 TEMPLATES = [
