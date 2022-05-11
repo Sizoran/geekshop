@@ -52,6 +52,7 @@ INSTALLED_APPS = [
 AUTH_USER_MODEL = "authnapp.ShopUser"
 
 MIDDLEWARE = [
+    "django.middleware.cache.UpdateCacheMiddleware",  # for entire site caching
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -61,6 +62,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "social_django.middleware.SocialAuthExceptionMiddleware",
 ]
+
 
 
 ROOT_URLCONF = "geekshop.urls"
@@ -207,6 +209,7 @@ SOCIAL_AUTH_GITHUB_KEY = github_auth["client_id"]
 SOCIAL_AUTH_GITHUB_SECRET = github_auth["client_secret"]
 
 # Django Debug Toolbar --->
+
 # if DEBUG:
 #     INSTALLED_APPS.extend(
 #         [
@@ -251,6 +254,7 @@ SOCIAL_AUTH_GITHUB_SECRET = github_auth["client_secret"]
 #         "debug_toolbar.panels.profiling.ProfilingPanel",
 #         "template_profiler_panel.panels.template.TemplateProfilerPanel",
 #     ]
+
 # <--- Django Debug Toolbar
 
 CACHE_MIDDLEWARE_ALIAS = "default"
